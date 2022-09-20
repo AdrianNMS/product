@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  database:
+    image : "mongo:latest"
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+    networks:
+      - product-network
+
+  product:
+    build: "."
+    ports:
+      - "8083:8083"
+    expose:
+      - "8083"
+    depends_on:
+      - database
+    networks:
+      - product-network
+
+
+networks:
+  product-network:
