@@ -3,7 +3,7 @@ spring:
   data:
     mongodb:
       uri:
-        mongodb://database:27017/spring_boot
+        mongodb://mongo-service:27017/spring_boot
 server:
   port:
     8083
